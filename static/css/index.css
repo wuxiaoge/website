@@ -2,12 +2,12 @@ body {font-family: 微软雅黑; font-size: 12px; color: #707070;}
 a {text-decoration: none; color: #666;}
 ul {margin: 0;}
 
-.top {height: 108px; background: url(E:/imgs/website/images/top.gif) left top repeat-x;}
-.menu {height: 49px; background: url(E:/imgs/website/images/menu.gif) left top repeat-x;}
+.top {height: 108px; background: url(/static/images/top.gif) left top repeat-x;}
+.menu {height: 49px; background: url(/static/images/menu.gif) left top repeat-x;}
 .banner {height: 372px;}
 .listctnt {}
 .listprod {}
-.foot {padding: 20px 0; background: url(E:/imgs/website/images/foot.gif) center top;}
+.foot {padding: 20px 0; background: url(/static/images/foot.gif) center top;}
 .blank10, .blank20, .blank30 {clear: both; overflow: hidden;}
 .blank5 {height: 5px;}
 .blank10 {height: 10px;}
@@ -19,7 +19,7 @@ ul {margin: 0;}
 
 .logo {float: left; padding: 20px 0 0 20px;}
 .top_ctct {float: right; padding: 70px 0 0 0; width: 420px;}
-.tell_no {float: right; font-size: 16px; padding: 0 0 0 30px; height: 16px; line-height: 16px; color: #c91d1c; font-weight: bold; background: url(E:/imgs/website/images/tell_no.gif) left center no-repeat;}
+.tell_no {float: right; font-size: 16px; padding: 0 0 0 30px; height: 16px; line-height: 16px; color: #c91d1c; font-weight: bold; background: url(/static/images/tell_no.gif) left center no-repeat;}
 
 .slides {position: relative; margin: auto; height: 372px;}
 .slides_box, .slides_box div {position: absolute; width: 100%; height: 100%;}
@@ -29,39 +29,39 @@ ul {margin: 0;}
 .slides_nav li.current img {border-style: solid;}
 .slides_nav .nav_point {width: 10px; height: 10px; background-color: #cb0501;}
 
-.menu_ul {height: 48px; padding: 1px 0 0 1px; background: url(E:/imgs/website/images/menu_ul.gif) left bottom no-repeat;}
+.menu_ul {height: 48px; padding: 1px 0 0 1px; background: url(/static/images/menu_ul.gif) left bottom no-repeat;}
 ul#navmenu {z-index: 99; position: relative;}
-ul#navmenu li {margin: 0; padding: 0; border: 0; float: left; display: inline; list-style: none; position: relative; padding-right: 1px; width: 142px; background: url(E:/imgs/website/images/menu_ul.gif) right center no-repeat;}
+ul#navmenu li {margin: 0; padding: 0; border: 0; float: left; display: inline; list-style: none; position: relative; padding-right: 1px; width: 142px; background: url(/static/images/menu_ul.gif) right center no-repeat;}
 ul#navmenu li a {font-size: 14px; font-weight: 700; display: block; color: #646464; height: 48px; line-height: 48px; width: 142px; text-align: center;}
-ul#navmenu li a:hover, ul#navmenu li a.on {color: #fff; background: url(E:/imgs/website/images/menu_item.gif) left top no-repeat;}
+ul#navmenu li a:hover, ul#navmenu li a.on {color: #fff; background: url(/static/images/menu_item.gif) left top no-repeat;}
 
 .title {height: 18px; line-height: 18px;}
 .title span {color: #275d99; font-size: 16px; font-weight: 700; padding: 0 10px 0 0;}
 .title .more {display: block; float: right; margin: 3px 0 0;}
 .title .aa {color: #666; font-size: 14px; font-weight: 700;}
 
-.about {float: left; width: 420px; height: 170px; background: url(E:/imgs/website/images/listctnt_bg.png) right center no-repeat;}
-.news {float: left; width: 315px; height: 170px; padding: 0 20px 0 15px; background: url(E:/imgs/website/images/listctnt_bg.png) right center no-repeat;}
+.about {float: left; width: 420px; height: 170px; background: url(/static/images/listctnt_bg.png) right center no-repeat;}
+.news {float: left; width: 315px; height: 170px; padding: 0 20px 0 15px; background: url(/static/images/listctnt_bg.png) right center no-repeat;}
 .ctct {float: right; width: 225px; height: 170px;}
 .about .ctnt {width: 220px; float: right; margin: 0 20px 0 0;}
 .about .ctnt p {line-height: 21px; margin: 13px 0 0;}
 
 .news ul {padding: 15px 0 0;}
-.news ul li {list-style: none; padding-left: 15px; line-height: 25px; background: url(E:/imgs/website/images/li_dian.gif) left center no-repeat;}
+.news ul li {list-style: none; padding-left: 15px; line-height: 25px; background: url(/static/images/li_dian.gif) left center no-repeat;}
 .news ul li span {float: right;}
 
-.ctct .tel_ctct {padding: 20px 0 0 70px; font-size: 20px; font-weight: 700; color: #cb0501; background: url(E:/imgs/website/images/tel_ctct.png) left top no-repeat;}
+.ctct .tel_ctct {padding: 20px 0 0 70px; font-size: 20px; font-weight: 700; color: #cb0501; background: url(/static/images/tel_ctct.png) left top no-repeat;}
 .ctct ul {padding: 10px 0 0;}
 .ctct ul li {list-style: none; padding: 0 0 5px 0;}
 
-.prod_cls {padding: 0 20px; height: 35px; line-height: 35px; background: url(E:/imgs/website/images/tabnav.jpg) left top repeat-x; border-left: 1px solid #efefef; border-right: 1px solid #efefef;}
+.prod_cls {padding: 0 20px; height: 35px; line-height: 35px; background: url(/static/images/tabnav.jpg) left top repeat-x; border-left: 1px solid #efefef; border-right: 1px solid #efefef;}
 .prod_cls li {list-style: none; cursor: pointer; float: left; width: 105px; height: 35px; line-height: 35px; overflow: hidden; text-align: center; margin-right: 5px; color: #333;}
-.prod_cls li.hover {font-size: 14px; background: url(E:/imgs/website/images/tabnav.png) left top repeat-x;}
+.prod_cls li.hover {font-size: 14px; background: url(/static/images/tabnav.png) left top repeat-x;}
 .prod_list {display: none; padding: 0;}
 .prod_list li {list-style: none; float: left; text-align: center; margin: 0 4px 0 4px; width: 159px;}
 .prod_list li img {width: 100%; height: 108px;}
 .prod_list.seleted {display: block;}
 
-.foot ul {float: left; width: 100%; color: #999;}
+.foot ul {float: left; width: 95%; color: #999;}
 .foot ul li {list-style: none; padding-bottom: 5px;}
 .foot ul li span {float: right;}

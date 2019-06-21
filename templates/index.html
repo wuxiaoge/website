@@ -1,59 +1,7 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<title>website</title>
-	<meta name="keywords" content="website" />
-	<meta name="description" content="website" />
-	<link rel="stylesheet" type="text/css" href="css/index.css" />
-	<script type="text/javascript" src="https://ss1.bdstatic.com/5eN1bjq8AAUYm2zgoY3K/r/www/cache/static/protocol/https/jquery/jquery-1.10.2.min_65682a2.js"></script>
-	<script type="text/javascript" src="https://www.cmseasy.cn/demo/business-template/v009/template/CmsEasy_V_009/skin/js/jquery.featureList-1.0.0.js"></script>
-	<script type="text/javascript" src="js/index.js"></script>
-</head>
-<body>
-	<div class="top">
-		<div class="box">
-			<div class="logo">
-				<a href="/">
-					<img src="https://www.cmseasy.cn/demo/business-template/v148/images/logo.png" width="260" />
-				</a>
-			</div>
-			<div class="top_ctct">
-				<div class="tell_no">服务热线:&nbsp;&nbsp;400-400-4000</div>
-			</div>
-		</div>
-	</div>
-	<div class="menu">
-		<div class="box">
-			<ul id="navmenu" class="menu_ul">
-				<li>
-					<a class="on" href="">首页</a>
-				</li>
-				<li>
-					<a href="">关于我们</a>
-				</li>
-				<li>
-					<a href="">企业新闻</a>
-				</li>
-			</ul>
-		</div>
-	</div>
-	<div class="banner">
-		<div class="box slides">
-			<div class="slides_box">
-				<div><a href="#"><img src="https://www.cmseasy.cn/demo/business-template/v009/images/slide/banner01.jpg"/></a></div>
-				<div><a href="#"><img src="https://www.cmseasy.cn/demo/business-template/v148/images/slide/banner02.jpg"/></a></div>
-				<div><a href="#"><img src="https://www.cmseasy.cn/demo/business-template/v009/images/slide/banner03.jpg"/></a></div>
-			</div>
-			<ul class="slides_nav">
-				<li><div class="nav_point"></div></li>
-				<li><div class="nav_point"></div></li>
-				<li><div class="nav_point"></div></li>
-			</ul>
-		</div>
-	</div>
-	<div class="blank30"></div>
+{% extends 'base.html' %}
+{% load static %}
+
+{% block webContent %}
 	<div class="listctnt">
 		<div class="box">
 			<div class="about">
@@ -63,7 +11,7 @@
 				<div class="ctnt">
 					<div class="title">
 						<a class="more" href="">
-							<img src="E:/imgs/website/images/more.gif" width="39" height="13" />
+							<img src="{% static 'images/more.gif' %}" width="39" height="13" />
 						</a>
 						<span>About</span>
 						<a class="aa" href="">关于我们</a>
@@ -74,7 +22,7 @@
 			<div class="news">
 				<div class="title">
 					<a class="more" href="">
-						<img src="E:/imgs/website/images/more.gif" width="39" height="13" />
+						<img src="{% static 'images/more.gif' %}" width="39" height="13" />
 					</a>
 					<span>News</span>
 					<a class="aa" href="">企业新闻</a>
@@ -105,7 +53,7 @@
 			<div class="ctct">
 				<div class="title">
 					<a class="more" href="">
-						<img src="E:/imgs/website/images/more.gif" width="39" height="13" />
+						<img src="{% static 'images/more.gif' %}" width="39" height="13" />
 					</a>
 					<span>Contact</span>
 					<a class="aa" href="">联系我们</a>
@@ -126,7 +74,7 @@
 		<div class="box">
 			<div class="title">
 				<a class="more" href="">
-					<img src="E:/imgs/website/images/more2.gif" width="39" height="13" />
+					<img src="{% static 'images/more2.gif' %}" width="39" height="13" />
 				</a>
 				<span>Products</span>
 				<a class="aa" href="">产品中心</a>
@@ -228,29 +176,4 @@
 			</div>
 		</div>
 	</div>
-	<div class="blank20"></div>
-	<div class="foot">
-		<div class="box">
-			<ul>
-				<li>
-					<span>
-						<a href="">企业历史</a>
-						&nbsp;:&nbsp;
-						<a href="">企业文化</a>
-						&nbsp;:&nbsp;
-						<a href="">企业荣誉</a>
-					</span>
-					Copyright&nbsp;©&nbsp;&nbsp;蓝色高端大气上档次公司企业网站模板
-				</li>
-				<li>京ICP备88888888号</li>
-				<li>友情链接：
-					<a href="">网站1</a>
-					<a href="">网站2</a>
-					<a href="">网站3</a>
-				</li>
-			</ul>
-			<div class="clear"></div>
-		</div>
-	</div>
-</body>
-</html>
+{% endblock webContent %}

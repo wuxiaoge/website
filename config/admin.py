@@ -5,8 +5,8 @@ from django.contrib import admin
 from config.models import Config, About, Contact, FriendLink
 
 class ConfigAdmin(admin.ModelAdmin):
-    readonly_fields = ("category",)
-    list_display = ("category",)
+    readonly_fields = ("key",)
+    list_display = ("key", "value")
     fieldsets = (
         (None, {
             "fields": ("category", "value"),
@@ -41,7 +41,6 @@ class AboutAdmin(admin.ModelAdmin):
         return False
 
 class ContactAdmin(admin.ModelAdmin):
-    readonly_fields = ("category",)
     list_display = ("category", "value")
     fieldsets = (
         (None, {
@@ -49,14 +48,7 @@ class ContactAdmin(admin.ModelAdmin):
         }),
     )
     actions = None
-    save_as = False
-    save_as_continue = False
 
-    def has_add_permission(self, request):
-        return False
-
-    def has_delete_permission(self, request, obj=None):
-        return False
 
 class FriendLinkAdmin(admin.ModelAdmin):
     list_display = ("name", "link")

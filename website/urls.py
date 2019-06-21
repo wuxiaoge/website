@@ -17,7 +17,13 @@ from django.conf.urls import url
 from django.contrib import admin
 from django.conf.urls.static import static
 from . import settings
+from config.views import urlpatterns as config_urlpatterns
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-] + static("/medias/", document_root=settings.MEDIA_ROOT)
+]
+
+urlpatterns += static("/static/", document_root=settings.STATIC_ROOT)
+urlpatterns += static("/medias/", document_root=settings.MEDIA_ROOT)
+
+urlpatterns += config_urlpatterns
