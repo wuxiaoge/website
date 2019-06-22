@@ -6,7 +6,7 @@
 {% for o in objects %}
 <div class="oitem">
     <div class="odt">{{ o.create_dt|date:"Y-m-d" }}</div>
-    <div class="otitle"><a href="">{{ o.title }}</a></div>
+    <div class="otitle"><a href="/news/{{ o.id }}">{{ o.title }}</a></div>
 </div>
 {% endfor %}
 {% endblock rightContent %}

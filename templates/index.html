@@ -22,11 +22,11 @@
 			</div>
 			<div class="news">
 				<div class="title">
-					<a class="more" href="">
+					<a class="more" href="/news/">
 						<img src="{% static 'images/more.gif' %}" width="39" height="13" />
 					</a>
 					<span>News</span>
-					<a class="aa" href="">企业新闻</a>
+					<a class="aa" href="/news/">企业新闻</a>
 				</div>
 				<ul>
                                         {% for new in news %}
@@ -44,11 +44,11 @@
 	<div class="listprod">
 		<div class="box">
 			<div class="title">
-				<a class="more" href="">
+				<a class="more" href="/product/">
 					<img src="{% static 'images/more2.gif' %}" width="39" height="13" />
 				</a>
 				<span>Products</span>
-				<a class="aa" href="">产品中心</a>
+				<a class="aa" href="/product/">产品中心</a>
 			</div>
 			<div class="blank10"></div>
 			<div class="blank5"></div>
@@ -66,7 +66,7 @@
                             {% endif %}
                             {% for p in i.1 %}
 					<li>
-						<a href="">
+						<a href="/product/{{ p.id }}">
 							<img src="{{ p.image }}" />
 						</a>
 						<h5>

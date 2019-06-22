@@ -35,10 +35,7 @@ class NewsView(TemplateView):
     template_name = "new.html"
 
     def get_context_data(self, **kwargs):
-        try:
-            new_id = int(self.request.GET.get("new_id"))
-        except Exception:
-            new_id = 0
+        new_id = int(kwargs["id"])
         context = super(NewsView, self).get_context_data(**kwargs)
         context["object"] = get_object_or_404(News, pk=new_id)
         context["categories"] = []
@@ -48,6 +45,6 @@ class NewsView(TemplateView):
 
 
 urlpatterns = [
-    url(r"^news$", NewListView.as_view(), name="new_list_view"),
-    url(r"^new$", NewsView.as_view(), name="news_view"),
+    url(r"^news/$", NewListView.as_view(), name="new_list_view"),
+    url(r"^news/(?P<id>\d+)$", NewsView.as_view(), name="news_view"),
 ]
