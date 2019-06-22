@@ -57,7 +57,7 @@ def contact_html():
 def friends(size):
     if size:
         fdls = FriendLink.objects.all()[:size]
-    else
+    else:
         fdls = FriendLink.objects.all()
     tpl = loader.get_template("tpl/friends.html")
     return tpl.render({"friends": fdls})

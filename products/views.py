@@ -2,6 +2,7 @@
 from __future__ import unicode_literals
 
 from django.conf.urls import url
+from django.shortcuts import get_object_or_404
 from django.views.generic.base import TemplateView
 from django.core.paginator import Paginator
 from django.core.paginator import PageNotAnInteger
@@ -30,6 +31,24 @@ class ProductsView(TemplateView):
         context["categoryName"] = "产品类型"
         return context
 
+class ProductView(TemplateView):
+    template_name = "prod.html"
+
+    def get_context_data(self, **kwargs):
+        try:
+            product_id = int(self.request.GET.get("product_id"))
+        except Exception:
+            product_id = 0
+        context = super(ProductView, self).get_context_data(**kwargs)
+        categories = Category.objects.all()
+        context["categories"] = categories
+        context["categoryKey"] = "Category"
+        context["categoryName"] = "产品类型"
+        context["object"] = get_object_or_404(Product, pk=product_id)
+        return context
+
+
 urlpatterns = [
-    url(r"^products$", ProductsView.as_view(), name="products_view")
+    url(r"^products$", ProductsView.as_view(), name="products_view"),
+    url(r"^product$", ProductView.as_view(), name="product_view"),
 ]
