@@ -10,7 +10,7 @@ from products.models import Category, Product, ProjectCase
 
 
 class ProductsView(TemplateView):
-    template_name = "list.html"
+    template_name = "prods.html"
 
     def get_context_data(self, **kwargs):
         context = super(ProductsView, self).get_context_data(**kwargs)

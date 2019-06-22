@@ -5,11 +5,11 @@ from django.contrib import admin
 from config.models import Config, About, Contact, FriendLink
 
 class ConfigAdmin(admin.ModelAdmin):
-    readonly_fields = ("key",)
-    list_display = ("key", "value")
+    readonly_fields = ("id",)
+    list_display = ("id", "value")
     fieldsets = (
         (None, {
-            "fields": ("category", "value"),
+            "fields": ("id", "value"),
         }),
     )
     actions = None
@@ -23,11 +23,11 @@ class ConfigAdmin(admin.ModelAdmin):
         return False
 
 class AboutAdmin(admin.ModelAdmin):
-    readonly_fields = ("category",)
-    list_display = ("category",)
+    readonly_fields = ("id",)
+    list_display = ("id",)
     fieldsets = (
         (None, {
-            "fields": ("category", "content"),
+            "fields": ("id", "content"),
         }),
     )
     actions = None
@@ -41,10 +41,10 @@ class AboutAdmin(admin.ModelAdmin):
         return False
 
 class ContactAdmin(admin.ModelAdmin):
-    list_display = ("category", "value")
+    list_display = ("id", "value")
     fieldsets = (
         (None, {
-            "fields": ("category", "value"),
+            "fields": ("id", "value"),
         }),
     )
     actions = None

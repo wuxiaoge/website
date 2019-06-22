@@ -13,12 +13,11 @@ CONFIG_KEYS = (
 )
 
 class Config(models.Model):
-    id = models.AutoField(primary_key=True, verbose_name="ID")
-    key = models.IntegerField(choices=CONFIG_KEYS, unique=True, verbose_name="名称", default=0)
+    id = models.IntegerField(primary_key=True, choices=CONFIG_KEYS, unique=True, verbose_name="名称", default=0)
     value = models.CharField(max_length=255, verbose_name="内容")
 
     def __str__(self):
-        return dict(CONFIG_KEYS).get(self.key, "UNKNOWN")
+        return dict(CONFIG_KEYS).get(self.id, "UNKNOWN")
 
     class Meta:
         db_table = "tb_config"
@@ -33,12 +32,11 @@ ABOUT_CATEGORIES = (
 )
 
 class About(models.Model):
-    id = models.AutoField(primary_key=True, verbose_name="ID")
-    category = models.IntegerField(choices=ABOUT_CATEGORIES, unique=True, verbose_name="名称", default=0)
+    id = models.IntegerField(primary_key=True, choices=ABOUT_CATEGORIES, unique=True, verbose_name="名称", default=0)
     content = RichTextField(verbose_name="内容")
 
     def __str__(self):
-        return dict(ABOUT_CATEGORIES).get(self.category, "UNKNOWN")
+        return dict(ABOUT_CATEGORIES).get(self.id, "UNKNOWN")
 
     class Meta:
         db_table = "tb_about"
@@ -54,12 +52,11 @@ CONTACT_CATEGORIES = (
 )
 
 class Contact(models.Model):
-    id = models.AutoField(primary_key=True, verbose_name="ID")
-    category = models.IntegerField(choices=CONTACT_CATEGORIES, unique=True, verbose_name="名称", default=0)
+    id = models.IntegerField(primary_key=True, choices=CONTACT_CATEGORIES, unique=True, verbose_name="名称", default=0)
     value = models.CharField(max_length=255, verbose_name="内容")
 
     def __str__(self):
-        return self.name
+        return dict(CONTACT_CATEGORIES).get(self.id, "UNKNOWN")
 
     class Meta:
         db_table = "tb_contact"

@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load config_tags %}
+
+{% block webContent %}
+<div class="listctnt">
+    <div class="box">
+        <div class="right">
+            <div class="block20"></div>
+            {% block rightContent %}
+            {% endblock rightContent %}
+        </div>
+        <div class="left">
+            {% if categories %}
+            <div class="ctct" style="height: auto;">
+                <div class="title">
+                    <span>{{ categoryKey }}</span>
+                    <a class="aa" href="javascript:void(0);">{{ categoryName }}</a>
+                </div>
+                <div class="blank10"></div>
+                <ul>
+                {% for c in categories %}
+                    <li><a href="">{{ c.name }}</a>&nbsp;</li>
+                {% endfor %}
+                </ul>
+            </div>
+            <div class="blank20"></div>
+            {% endif %}
+            {% contact_html %}
+            <div class="ctct" style="height: auto;">
+                <div class="title">
+                    <span>Friends</span>
+                    <a class="aa" href="javascript:void(0);">友情链接</a>
+                </div>
+                <div class="blank10"></div>
+                {% friends 0 %}
+            </div>
+        </div>
+        <div class="clear"></div>
+    </div>
+</div>
+{% endblock webContent %}

@@ -1,4 +1,4 @@
-body {font-family: 微软雅黑; font-size: 12px; color: #707070;}
+body {font-family: 微软雅黑; font-size: 12px; color: #707070; min-height: 100%;}
 a {text-decoration: none; color: #666;}
 ul {margin: 0;}
 
@@ -66,8 +66,13 @@ ul#navmenu li a:hover, ul#navmenu li a.on {color: #fff; background: url(/static/
 .foot ul li {list-style: none; padding-bottom: 5px;}
 .foot ul li span {float: right;}
 
-.left {float: left; width: 240px; border-right: 1px solid #e0e0e0; padding: 0 5px 0 0;}
+.left {float: left; width: 240px; padding: 0 5px 0 0; background: url(/static/images/listctnt_bg.png) right center repeat-y;}
 .right {float: right; width: 740px;}
 .oitem {padding: 10px 30px 0 30px;}
 .oitem .odt {float: right;}
 .oitem .otitle {font-weight: bold;}
+
+ul.prods {padding: 0;}
+ul.prods li {list-style: none; float: left;}
+ul.prods li .prod_item {margin: 0 0 5px 18px; text-align: center;}
+ul.prods li .prod_item img {border: 1px solid #ccc; width: 159px; height: 108px;}

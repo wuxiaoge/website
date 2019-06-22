@@ -1,0 +1,20 @@
+{% extends 'info.html' %}
+{% load static %}
+{% load config_tags %}
+
+{% block rightContent %}
+<ul class="prods">
+    {% for o in objects %}
+    <li>
+        <div class="prod_item">
+            <div>
+                <a href="">
+                    <img src="{{ o.image }}"/>
+                </a>
+            </div>
+            <h5>{{ o.title }}</h5>
+        </div>
+    </li>
+    {% endfor %}
+</ul>
+{% endblock rightContent %}
