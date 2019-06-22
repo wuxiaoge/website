@@ -4,13 +4,21 @@ from __future__ import unicode_literals
 from django.db import models
 from ckeditor.fields import RichTextField
 
+CONFIG_KEYS = (
+    (1, "网站标题"),
+    (2, "网站关键字"),
+    (3, "网站描述"),
+    (4, "公司名称"),
+    (5, "服务热线"),
+)
+
 class Config(models.Model):
     id = models.AutoField(primary_key=True, verbose_name="ID")
-    key = models.CharField(max_length=255, unique=True, verbose_name="名称")
+    key = models.IntegerField(choices=CONFIG_KEYS, unique=True, verbose_name="名称", default=0)
     value = models.CharField(max_length=255, verbose_name="内容")
 
     def __str__(self):
-        return self.key
+        return dict(CONFIG_KEYS).get(self.key, "UNKNOWN")
 
     class Meta:
         db_table = "tb_config"
@@ -18,10 +26,15 @@ class Config(models.Model):
         verbose_name_plural = "网站配置"
         ordering = ["id"]
 
+ABOUT_CATEGORIES = (
+    (1, "企业历史"),
+    (2, "企业文化"),
+    (3, "企业荣誉"),
+)
 
 class About(models.Model):
     id = models.AutoField(primary_key=True, verbose_name="ID")
-    category = models.CharField(max_length=127, unique=True, verbose_name="类型")
+    category = models.IntegerField(choices=ABOUT_CATEGORIES, unique=True, verbose_name="名称", default=0)
     content = RichTextField(verbose_name="内容")
 
     def __str__(self):
@@ -33,10 +46,16 @@ class About(models.Model):
         verbose_name_plural = "关于我们"
         ordering = ["id"]
 
+CONTACT_CATEGORIES = (
+    (1, "电话"),
+    (2, "传真"),
+    (3, "邮箱"),
+    (4, "地址"),
+)
 
 class Contact(models.Model):
     id = models.AutoField(primary_key=True, verbose_name="ID")
-    category = models.CharField(max_length=127, unique=True, verbose_name="名称")
+    category = models.IntegerField(choices=CONTACT_CATEGORIES, unique=True, verbose_name="名称", default=0)
     value = models.CharField(max_length=255, verbose_name="内容")
 
     def __str__(self):

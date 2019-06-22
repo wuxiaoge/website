@@ -18,6 +18,8 @@ from django.contrib import admin
 from django.conf.urls.static import static
 from . import settings
 from config.views import urlpatterns as config_urlpatterns
+from news.views import urlpatterns as news_urlpatterns
+from products.views import urlpatterns as products_urlpatterns
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -27,3 +29,5 @@ urlpatterns += static("/static/", document_root=settings.STATIC_ROOT)
 urlpatterns += static("/medias/", document_root=settings.MEDIA_ROOT)
 
 urlpatterns += config_urlpatterns
+urlpatterns += news_urlpatterns
+urlpatterns += products_urlpatterns

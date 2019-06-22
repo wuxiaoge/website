@@ -1,12 +1,13 @@
 {% load static %}
+{% load config_tags %}
 <!DOCTYPE html>
 <html>
 <head>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<title>xxx</title>
-	<meta name="keywords" content="xxx" />
-	<meta name="description" content="xxx" />
+	<title>{% config 1 %}</title>
+	<meta name="keywords" content="{% config 2 %}" />
+	<meta name="description" content="{% config 3 %}" />
 	<link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}" />
 	<script type="text/javascript" src="https://ss1.bdstatic.com/5eN1bjq8AAUYm2zgoY3K/r/www/cache/static/protocol/https/jquery/jquery-1.10.2.min_65682a2.js"></script>
 	<script type="text/javascript" src="https://www.cmseasy.cn/demo/business-template/v009/template/CmsEasy_V_009/skin/js/jquery.featureList-1.0.0.js"></script>
@@ -21,7 +22,7 @@
 				</a>
 			</div>
 			<div class="top_ctct">
-				<div class="tell_no">服务热线:&nbsp;&nbsp;400-400-4000</div>
+				<div class="tell_no">服务热线:&nbsp;&nbsp;{% contact 1 %}</div>
 			</div>
 		</div>
 	</div>
@@ -36,6 +37,9 @@
 				</li>
 				<li>
 					<a href="">企业新闻</a>
+				</li>
+				<li>
+					<a href="">产品中心</a>
 				</li>
 			</ul>
 		</div>
@@ -69,14 +73,10 @@
 						&nbsp;:&nbsp;
 						<a href="">企业荣誉</a>
 					</span>
-					Copyright&nbsp;©&nbsp;&nbsp;蓝色高端大气上档次公司企业网站模板
+					Copyright&nbsp;©&nbsp;&nbsp;{% config 4 %}
 				</li>
 				<li>京ICP备88888888号</li>
-				<li>友情链接：
-					<a href="">网站1</a>
-					<a href="">网站2</a>
-					<a href="">网站3</a>
-				</li>
+				<li>友情链接：{% friends 3 %}</li>
 			</ul>
 			<div class="clear"></div>
 		</div>

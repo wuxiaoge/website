@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load config_tags %}
+
+{% block webContent %}
+<div class="listctnt">
+    <div class="box">
+        <div class="right">
+            <div class="block20"></div>
+            {% for o in objects %}
+            <div class="oitem">
+                <div class="odt">{{ o.create_dt|date:"Y-m-d" }}</div>
+                <div class="otitle"><a href="">{{ o.title }}</a></div>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="left">
+        {% if categories %}
+        <div class="ctct" style="height: auto;">
+            <div class="title">
+                <span>{{ categoryKey }}</span>
+                <a class="aa" href="">{{ categoryName }}</a>
+            </div>
+            <div class="blank10"></div>
+            <ul>
+            {% for c in categories %}
+                <li><a href="">{{ c.name }}</a>&nbsp;</li>
+            {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
+        <div class="blank20"></div>
+        {% contact_html %}
+        </div>
+        <div class="clear"></div>
+    </div>
+</div>
+{% endblock webContent %}

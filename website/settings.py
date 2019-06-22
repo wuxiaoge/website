@@ -83,9 +83,9 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'web_test',
-        'USER': 'root',
-        'PASSWORD': '',
-        'HOST': 'localhost',
+        'USER': 'test',
+        'PASSWORD': '123456',
+        'HOST': '172.16.1.229',
         'PORT': '3306',
     }
 }
@@ -133,8 +133,6 @@ STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
 MEDIA_URL = '/medias/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'medias/')
-print("static:", STATIC_ROOT)
-print("medias:", MEDIA_ROOT)
 
 CKEDITOR_CONFIGS = {
     'default': {

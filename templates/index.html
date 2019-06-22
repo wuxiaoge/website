@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load config_tags %}
 
 {% block webContent %}
 	<div class="listctnt">
@@ -16,7 +17,7 @@
 						<span>About</span>
 						<a class="aa" href="">关于我们</a>
 					</div>
-					<p>易通企业网站系统也称易通企业网站程序，是易通公司开发中国唯一可免费用于商业用途的营销型企业网站管理系统，系统前台生成html、完全符合SEO、同时有在线客服、潜在客户跟踪、便捷企业网站模板制作...</p>
+					<p>{% about 1 %}</p>
 				</div>
 			</div>
 			<div class="news">
@@ -28,44 +29,15 @@
 					<a class="aa" href="">企业新闻</a>
 				</div>
 				<ul>
+                                        {% for new in news %}
 					<li>
-						<span>[2013-03]</span>
-						<a href="">网站优化必须要主要的细节</a>
+						<span>[{{ new.create_dt|date:"Y-m-d" }}]</span>
+						<a href="">{{ new.title }}</a>
 					</li>
-					<li>
-						<span>[2013-03]</span>
-						<a href="">网站优化必须要主要的细节</a>
-					</li>
-					<li>
-						<span>[2013-03]</span>
-						<a href="">网站优化必须要主要的细节</a>
-					</li>
-					<li>
-						<span>[2013-03]</span>
-						<a href="">网站优化必须要主要的细节</a>
-					</li>
-					<li>
-						<span>[2013-03]</span>
-						<a href="">网站优化必须要主要的细节</a>
-					</li>
+                                        {% endfor %}
 				</ul>
 			</div>
-			<div class="ctct">
-				<div class="title">
-					<a class="more" href="">
-						<img src="{% static 'images/more.gif' %}" width="39" height="13" />
-					</a>
-					<span>Contact</span>
-					<a class="aa" href="">联系我们</a>
-				</div>
-				<div class="blank10"></div>
-				<div class="tel_ctct">400-400-4000</div>
-				<ul>
-					<li>传 真：400-400-4000</li>
-					<li>邮 箱：admin@yyd.com</li>
-					<li>地 址：某某股份有限公司</li>
-				</ul>
-			</div>
+                        {% contact_html %}
 			<div class="clear"></div>
 		</div>
 	</div>
@@ -82,97 +54,29 @@
 			<div class="blank10"></div>
 			<div class="blank5"></div>
 			<ul class="prod_cls">
-				<li>类型一</li>
-				<li>类型二</li>
-				<li>类型三</li>
+                        {% for i in categories %}
+				<li>{{ i.0 }}</li>
+                        {% endfor %}
 			</ul>
 			<div class="prods">
+                        {% for i in categories %}
+                            {% if forloop.first %}
 				<ul class="prod_list seleted">
-					<li>
-						<a href="">
-							<img src="https://www.cmseasy.cn/demo/business-template/v034/upload/images/201304/1366974493656.jpg" />
-						</a>
-						<h5>
-							<a href="">产品一1</a>
-						</h5>
-					</li>
-					
-				</ul>
+                            {% else %}
 				<ul class="prod_list">
+                            {% endif %}
+                            {% for p in i.1 %}
 					<li>
 						<a href="">
-							<img src="https://www.cmseasy.cn/demo/business-template/v034/upload/images/201304/1366974493656.jpg" />
+							<img src="{{ p.image }}" />
 						</a>
 						<h5>
-							<a href="">产品二1</a>
+							<a href="">{{ p.title }}</a>
 						</h5>
 					</li>
-					<li>
-						<a href="">
-							<img src="https://www.cmseasy.cn/demo/business-template/v034/upload/images/201304/1366974493656.jpg" />
-						</a>
-						<h5>
-							<a href="">产品二2</a>
-						</h5>
-					
-					</li>
+                            {% endfor %}
 				</ul>
-				<ul class="prod_list">
-					<li>
-						<a href="">
-							<img src="https://www.cmseasy.cn/demo/business-template/v034/upload/images/201304/1366974493656.jpg" />
-						</a>
-						<h5>
-							<a href="">产品三1</a>
-						</h5>
-					
-					</li>
-					<li>
-						<a href="">
-							<img src="https://www.cmseasy.cn/demo/business-template/v009/images/slide/banner01.jpg" />
-						</a>
-						<h5>
-							<a href="">产品三2</a>
-						</h5>
-					
-					</li>
-					<li>
-						<a href="">
-							<img src="https://www.cmseasy.cn/demo/business-template/v034/upload/images/201304/1366974493656.jpg" />
-						</a>
-						<h5>
-							<a href="">产品三3</a>
-						</h5>
-					
-					</li>
-					<li>
-						<a href="">
-							<img src="https://www.cmseasy.cn/demo/business-template/v034/upload/images/201304/1366974493656.jpg" />
-						</a>
-						<h5>
-							<a href="">产品三3</a>
-						</h5>
-					
-					</li>
-					<li>
-						<a href="">
-							<img src="https://www.cmseasy.cn/demo/business-template/v034/upload/images/201304/1366974493656.jpg" />
-						</a>
-						<h5>
-							<a href="">产品三3</a>
-						</h5>
-					
-					</li>
-					<li>
-						<a href="">
-							<img src="https://www.cmseasy.cn/demo/business-template/v034/upload/images/201304/1366974493656.jpg" />
-						</a>
-						<h5>
-							<a href="">产品三3</a>
-						</h5>
-					
-					</li>
-				</ul>
+                        {% endfor %}
 			</div>
 		</div>
 	</div>
