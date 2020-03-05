@@ -73,6 +73,6 @@ ul#navmenu li a:hover, ul#navmenu li a.on {color: #fff; background: url(/static/
 .oitem .otitle {font-weight: bold;}
 
 ul.prods {padding: 0;}
-ul.prods li {list-style: none; float: left;}
+ul.prods li {list-style: none; float: left; height: 180px;}
 ul.prods li .prod_item {margin: 0 0 5px 18px; text-align: center;}
 ul.prods li .prod_item img {border: 1px solid #ccc; width: 159px; height: 108px;}
