@@ -10,6 +10,10 @@ from django.core.paginator import EmptyPage
 from products.models import Category, Product, ProjectCase
 
 
+def convertCategories(categories):
+    return [{"name":i.name, "url":"/category/%d/product/" % i.id} for i in categories]
+
+
 class ProductsByCategoryView(TemplateView):
     template_name = "prods.html"
 
@@ -28,7 +32,7 @@ class ProductsByCategoryView(TemplateView):
             products = paginator.page(paginator.num_pages)
         context["objects"] = products
         categories = Category.objects.all()
-        context["categories"] = categories
+        context["categories"] = convertCategories(categories)
         context["categoryKey"] = "Category"
         context["categoryName"] = "产品类型"
         return context
@@ -49,7 +53,7 @@ class ProductsView(TemplateView):
             products = paginator.page(paginator.num_pages)
         context["objects"] = products
         categories = Category.objects.all()
-        context["categories"] = categories
+        context["categories"] = convertCategories(categories)
         context["categoryKey"] = "Category"
         context["categoryName"] = "产品类型"
         return context
@@ -61,7 +65,7 @@ class ProductView(TemplateView):
         product_id = int(kwargs["id"])
         context = super(ProductView, self).get_context_data(**kwargs)
         categories = Category.objects.all()
-        context["categories"] = categories
+        context["categories"] = convertCategories(categories)
         context["categoryKey"] = "Category"
         context["categoryName"] = "产品类型"
         context["object"] = get_object_or_404(Product, pk=product_id)

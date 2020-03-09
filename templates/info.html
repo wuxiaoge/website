@@ -20,7 +20,7 @@
                 <div class="blank10"></div>
                 <ul>
                 {% for c in categories %}
-                    <li><a href="/product/{{ c.id }}">{{ c.name }}</a>&nbsp;</li>
+                    <li><a href="{{ c.url }}">{{ c.name }}</a>&nbsp;</li>
                 {% endfor %}
                 </ul>
             </div>

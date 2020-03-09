@@ -3,5 +3,6 @@
 
 
 {% block rightContent %}
-hell world
+<h2>{{ object.title }}</h2>
+{{ object.content|safe }}
 {% endblock rightContent %}
