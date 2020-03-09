@@ -136,8 +136,11 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'medias/')
 
 CKEDITOR_CONFIGS = {
     'default': {
-        'toolbar': 'full',
-        'width': 1000,
+        'language': "zh-cn",
+        'toolbar': "full",
+        'width': "1000px",
+        "image_previewText": " ",
+        "extraPlugins": ",".join(["codesnippet", "uploadimage", "widget", "lineutils", ]),
         "removePlugins": "stylesheetparser",
         "font_names": "宋体/宋体;黑体/黑体;仿宋/仿宋_GB2312;楷体/楷体_GB2312;隶书/隶书;幼圆/幼圆;微软雅黑/微软雅黑;"
                       "Arial/Arial;Comic Sans MS/Comic Sans MS;Courier New/Courier New;Georgia/Georgia;Lucida Sans Unicode/Lucida Sans Unicode;"
