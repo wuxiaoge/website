@@ -1,4 +1,16 @@
 $(document).ready(function(){
+	var locationPath = location.pathname;
+	var start = 1;
+        var end = locationPath.indexOf("/", start);
+        var menuTxt = locationPath.substring(start, end);
+	$("#navmenu > li > a").each(function() {
+                var pathName = this.pathname;
+                var e = pathName.indexOf("/", start);
+                var pn = pathName.substring(start, e);
+		if(menuTxt == pn) {
+			$(this).addClass("on");
+                }
+	});
 	$.featureList(
 		$(".slides_nav li"),
 		$(".slides_box div"), 
